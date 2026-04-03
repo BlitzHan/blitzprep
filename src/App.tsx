@@ -48,7 +48,7 @@ function App() {
         <img src="/logo.svg" alt="BlitzPrep" style={{ width: '36px', height: '36px' }} />
         <div>
           <h1>BlitzPrep</h1>
-          <p>İngiltere İş Yeri Eğitimi Hazırlığı</p>
+          <p>Hızlı İngilizce, Güçlü Başlangıç</p>
         </div>
       </header>
 
