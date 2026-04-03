@@ -2,7 +2,7 @@
 
 > Hızlı İngilizce, Güçlü Başlangıç
 
-İngiltere'ye gidecek bir Apple Store Müdürü için geliştirilmiş İngilizce hazırlık uygulaması.
+İngilizce öğrenmek isteyenler için geliştirilmiş interaktif hazırlık uygulaması.
 
 ## Özellikler
 
