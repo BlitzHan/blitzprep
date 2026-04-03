@@ -4,6 +4,8 @@
 
 İngilizce öğrenmek isteyenler için geliştirilmiş interaktif hazırlık uygulaması.
 
+![BlitzPrep Preview](public/preview.svg)
+
 ## Özellikler
 
 - 📚 Kelime Kartları — ~170 kelime, akıllı tekrar sistemi
