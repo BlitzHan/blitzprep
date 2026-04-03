@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# ⚡ BlitzPrep
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Hızlı İngilizce, Güçlü Başlangıç**
 
-Currently, two official plugins are available:
+İngiltere'ye gidecek bir Apple Store Müdürü için geliştirilmiş İngilizce hazırlık uygulaması.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Özellikler
 
-## React Compiler
+| Modül | İçerik |
+|-------|--------|
+| 📚 **Kelime Kartları** | ~170 kelime, spaced repetition ile akıllı tekrar |
+| 💬 **Senaryolar** | 20 diyalog (günlük yaşam + Apple Store) |
+| ✏️ **Cümle Kurucu** | ~150 cümle, Türkçe → İngilizce yazma pratiği |
+| 🗣️ **Konuşma Pratiği** | 10 senaryo, serbest yazma |
+| 🧠 **Gramer** | 5 konu, ~57 soru (Tenses, Articles, Prepositions, Modals, Conditionals) |
+| 🎯 **Quiz** | Kelime / Gramer / Karışık modlar |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### İlerleme Takibi
+- ✅ **Spaced Repetition** (Leitner Sistemi)
+- 🔥 **Streak** takibi
+- 📊 **Günlük hedef** ve doğruluk oranı
+- 💾 **localStorage** ile kalıcı kayıt
 
-## Expanding the ESLint configuration
+## 🛠️ Teknolojiler
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** + **TypeScript**
+- **Vite** (Build tool)
+- **Lucide React** (İkonlar)
+- **Speech Synthesis API** (British English seslendirme)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Kurulum
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏗️ Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+`dist` klasöründeki dosyaları herhangi bir statik hosting'e yükleyebilirsin.
+
+## 📋 Yol Haritası
+
+Detaylı proje planı için [ROADMAP.md](ROADMAP.md) dosyasına bak.
+
+## 📝 Lisans
+
+Kişisel kullanım projesi.
