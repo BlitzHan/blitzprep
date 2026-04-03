@@ -44,11 +44,10 @@ function App() {
 
   return (
     <div className="app-container">
-      <header className="header" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-        <img src="/logo.svg" alt="BlitzPrep" style={{ width: '36px', height: '36px' }} />
+      <header className="header" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }} onClick={() => setActiveTab('dashboard')}>
+        <img src="/logo.svg" alt="BlitzPrep" style={{ width: '28px', height: '28px' }} />
         <div>
-          <h1>BlitzPrep</h1>
-          <p>Hızlı İngilizce, Güçlü Başlangıç</p>
+          <h1 style={{ fontSize: '1.25rem' }}>BlitzPrep</h1>
         </div>
       </header>
 

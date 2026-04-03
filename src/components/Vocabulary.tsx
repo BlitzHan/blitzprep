@@ -158,22 +158,32 @@ const Vocabulary: React.FC = () => {
               </p>
             )}
 
+            <p style={{ marginTop: '1.5rem', fontSize: '1rem', fontStyle: 'italic', color: 'var(--text-muted)', fontWeight: 500, textAlign: 'center', lineHeight: 1.4 }}>
+              "{currentWord.example}"
+            </p>
+
             {showResult && (
               <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', backgroundColor: 'var(--uk-blue)', color: 'white', borderRadius: '8px', border: '2px solid var(--border-color)' }}>
                 <p style={{ fontSize: '1.3rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{currentWord.meaning}</p>
-                <p style={{ fontSize: '0.95rem', fontStyle: 'italic', opacity: 0.9 }}>"{currentWord.example}"</p>
               </div>
             )}
 
             {!showResult && (
-              <p style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold' }}>
-                <RotateCw size={16} /> Çevirmek için dokun
+              <p style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                <RotateCw size={14} /> Çevirmek için dokun
               </p>
             )}
           </div>
           <div className="flashcard-back">
             <h3>{currentWord.meaning}</h3>
-            <p>"{currentWord.example}"</p>
+            {'exampleTr' in currentWord && currentWord.exampleTr ? (
+              <>
+                <p style={{ fontSize: '1rem', marginBottom: '0.5rem', opacity: 0.85 }}>"{currentWord.example}"</p>
+                <p style={{ fontSize: '0.95rem', fontStyle: 'italic', borderTop: '2px solid rgba(255,255,255,0.3)', paddingTop: '0.75rem' }}>"{currentWord.exampleTr}"</p>
+              </>
+            ) : (
+              <p style={{ fontSize: '1.1rem', fontStyle: 'italic', marginTop: '1rem', opacity: 0.85 }}>"{currentWord.example}"</p>
+            )}
           </div>
         </div>
       </div>

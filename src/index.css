@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-area {
-  padding: 2rem 1.5rem 6rem 1.5rem;
+  padding: 2rem 1.5rem 4rem 1.5rem;
 }
 
 /* Bottom Navigation - Industrial Grid */
@@ -203,11 +203,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Flashcards - Magazine Style */
 .flashcard {
-  perspective: 1000px;
   width: 100%;
   height: 300px;
   margin-bottom: 2rem;
   cursor: pointer;
+  perspective: 1000px;
 }
 
 .flashcard-inner {
@@ -215,8 +215,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s ease-out;
   transform-style: preserve-3d;
+  will-change: transform;
+  pointer-events: none;
 }
 
 .flashcard.flipped .flashcard-inner {
@@ -237,6 +239,39 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  pointer-events: auto;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.25s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: var(--card-bg);
+  border: 4px solid var(--border-color);
+  box-shadow: 8px 8px 0px var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  pointer-events: auto;
 }
 
 .flashcard-front {
@@ -441,23 +476,32 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--success);
 }
 
-/* Bottom Nav - 4x2 grid for 7 items */
+/* Bottom Nav - horizontal scroll, single row */
 .bottom-nav {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, auto);
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.5rem 0.25rem;
+  gap: 0;
 }
 
-.nav-item:nth-child(5) {
-  grid-column: 1;
-  grid-row: 2;
+.bottom-nav::-webkit-scrollbar {
+  display: none;
 }
-.nav-item:nth-child(6) {
-  grid-column: 2;
-  grid-row: 2;
+
+.nav-item {
+  flex: 0 0 auto;
+  min-width: 72px;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.7rem;
+  gap: 0.25rem;
 }
-.nav-item:nth-child(7) {
-  grid-column: 3;
-  grid-row: 2;
+
+.nav-item svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Grammar Styles */
