@@ -10,7 +10,7 @@ const Vocabulary: React.FC = () => {
   const [dueOnly, setDueOnly] = useState(false);
   const [randomOrder, setRandomOrder] = useState(true);
   const [shuffleSeed, setShuffleSeed] = useState(() => Math.floor(Math.random() * 1000000));
-  const { markWord, getDueWords, getWordProgress } = useProgress();
+  const { markWord, getDueWords } = useProgress();
 
   const allWordStrings = vocabulary.map(w => w.word);
   const dueWordStrings = getDueWords(allWordStrings);
@@ -66,8 +66,6 @@ const Vocabulary: React.FC = () => {
       setCurrentIndex((prev) => (prev + 1) % Math.max(filteredList.length, 1));
     }, 1500);
   };
-
-  const wordProgress = currentWord ? getWordProgress(currentWord.word) : null;
 
   if (filteredList.length === 0) {
     return (
@@ -127,20 +125,6 @@ const Vocabulary: React.FC = () => {
         </button>
       </div>
 
-      {wordProgress && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Seviye:</span>
-          <div className="level-dots">
-            {[0, 1, 2, 3, 4, 5].map(i => (
-              <div key={i} className={`level-dot ${i < wordProgress.level ? 'filled' : ''}`} />
-            ))}
-          </div>
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            ({wordProgress.correct}✓ {wordProgress.wrong}✗)
-          </span>
-        </div>
-      )}
-
       <div
         className={`flashcard ${isFlipped ? 'flipped' : ''}`}
         onClick={() => !showResult && setIsFlipped(!isFlipped)}
@@ -163,7 +147,7 @@ const Vocabulary: React.FC = () => {
             </p>
 
             {showResult && (
-              <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', backgroundColor: 'var(--uk-blue)', color: 'white', borderRadius: '8px', border: '2px solid var(--border-color)' }}>
+              <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', right: '1rem', padding: '0.75rem 1rem', backgroundColor: 'var(--uk-blue)', color: 'white', borderRadius: '8px', border: '2px solid var(--border-color)' }}>
                 <p style={{ fontSize: '1.3rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{currentWord.meaning}</p>
               </div>
             )}
